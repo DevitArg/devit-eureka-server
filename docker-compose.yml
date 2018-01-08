@@ -1,0 +1,18 @@
+version: '2.1'
+services:
+  eureka:
+    container_name: eureka
+    hostname: eureka
+    image: dev-it/devit-eureka-server:latest
+    expose:
+    - 8761
+    ports:
+    - 8761:8761
+    networks:
+    - devit-network
+    logging:
+        driver: json-file
+
+networks:
+  devit-network:
+    driver: bridge

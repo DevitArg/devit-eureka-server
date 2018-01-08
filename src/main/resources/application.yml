@@ -1,0 +1,13 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    nonSecurePort: ${server.port}
+    instanceId: eureka:${spring.application.instance-id:${random.value}}
+  client:
+    enabled: true
+    registerWithEureka: true
+    fetchRegistry: true
+  server:
+    peerEurekaNodesUpdateIntervalMs: 30000
