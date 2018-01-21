@@ -5,9 +5,12 @@ eureka:
   instance:
     nonSecurePort: ${server.port}
     instanceId: eureka:${spring.application.instance-id:${random.value}}
+    preferIpAddress: false
   client:
     enabled: true
-    registerWithEureka: true
+    registerWithEureka: false
     fetchRegistry: true
-  server:
-    peerEurekaNodesUpdateIntervalMs: 30000
+  metadataMap:
+    user: uservice
+    password: password
+
